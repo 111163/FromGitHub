@@ -1,0 +1,34 @@
+name: CI_build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Install hugo extended and httrack via chocolatey
+      working-directory: .
+      run: |
+           choco install hugo-extended --version 0.57.2
+           choco install httrack
+
+    - name: Retrieve data from server
+      working-directory: .
+      run: |
+           cmd /c start hugo.exe server --minify --theme book
+           $env:Path += ";C:\Program Files\WinHTTrack\"
+           httrack.exe "http://127.0.0.1:1313/" -O "./httrack_output"
+           Set-Location -Path httrack_output
+           Rename-Item -Path 127.0.0.1_1313 -NewName nppUserManual
+
+    - name: Archive artifacts for hugo
+      uses: actions/upload-artifact@v3
+      with:
+          name: nppUserManual
+          path: ./httrack_output/nppUserManual/
+
