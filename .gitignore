@@ -1,0 +1,99 @@
+#-------------------------------------------------------------------------------
+# VisualStudio
+
+#-- User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+#-- Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+#[Bb]in/
+[Oo]bj/
+*.pdb
+vcproj/GUP.VC.db
+
+#-- Visual C++ cache files
+.vs/
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.opendb
+
+#-- Backup & report files from converting an old project file to a newer
+#   Visual Studio version. Backup files are not needed, because we have git ;-)
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+
+#-- Others
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+#*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+.builds
+*.pidb
+*.bak
+bin/
+bin64/
+binarm64/
+curl/build
+curl/builds
+
+#-------------------------------------------------------------------------------
+# Windows
+
+#-- image file cache
+Thumbs.db
+
+#-- Folder config file
+Desktop.ini
+folder-*.ico
+
+#-- Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+
+#-------------------------------------------------------------------------------
+# Mac
+
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.zip
+
+#-------------------------------------------------------------------------------
+# GNU GCC MinGW
+
+#-- Generated during makefile build
+*.d
+*.o
+
+curl/winbuild/CURL_OBJS.inc
+curl/winbuild/LIBCURL_OBJS.inc
+curl/winbuild/vc120.idb
+curl/winbuild/vc140.idb
+bin/GUP.exe
+bin/libcurl.dll
+bin/gup.xml
